@@ -50,8 +50,19 @@ public class Rational
     //      simplify(1/2) => 1/2
     public static Rational simplify(Rational r)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int x = 0;
+        int y = greatestCommonFactor(a, b);
+        if (r.numerator % r.denominator == 0)
+        {
+            x = r.numerator / r.denominator;
+        }
+        if ((double)r.numerator / (double)r.denominator >= 0)
+        {
+            r.numerator = r.numerator / y;
+            r.denominator = r.denominator / y;
+            x = r.numerator / r.denominator;
+        }
+        return x;
     }
 
     // This method takes two Rationals, subtracts thems up, 
